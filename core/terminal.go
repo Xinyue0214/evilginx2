@@ -161,6 +161,13 @@ func (t *Terminal) DoWork() {
 			if err != nil {
 				log.Error("blacklist: %v", err)
 			}
+		//static copy website
+		case "templates":
+			cmd_ok = true
+			err := t.handleBlacklist(args[1:])
+			if err != nil {
+				log.Error("templates: %v", err)
+			}
 		case "help":
 			cmd_ok = true
 			if len(args) == 2 {
