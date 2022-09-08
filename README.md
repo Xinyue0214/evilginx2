@@ -179,6 +179,13 @@ lures edit 0 redirect_url https://www.google.com
 lures get-url 0
 ```
 
+To create static phishing site. We can create another lure. If there is template, the html will override the live site.
+```
+lures create linkedin
+lures edit 1 redirect_url https://www.baidu.com
+lures edit 1 template ./download_example.html
+```
+
 Running phishlets will only respond to phishing links generating for specific lures, so any scanners who scan your main domain will be redirected to URL specified as `redirect_url` under `config`. If you want to hide your phishlet and make it not respond even to valid lure phishing URLs, use `phishlet hide/unhide <phishlet>` command.
 
 You can monitor captured credentials and session cookies with:
